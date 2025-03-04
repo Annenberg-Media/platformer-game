@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://2bssl6w47yjs"]
+
+[ext_resource type="PackedScene" uid="uid://d2b7fy3a341jn" path="res://Scenes/player.tscn" id="1_ddnih"]
+[ext_resource type="PackedScene" uid="uid://v7unggthm5ap" path="res://Scenes/ui/pausemenu.tscn" id="1_mah4n"]
+
+[node name="Level3" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ddnih")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_mah4n")]
+visible = false

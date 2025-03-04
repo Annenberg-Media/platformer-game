@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://2bssl6w47yjs"]
+
+[ext_resource type="PackedScene" uid="uid://d2b7fy3a341jn" path="res://Scenes/player.tscn" id="1_twr0n"]
+[ext_resource type="Script" path="res://Scripts/level.gd" id="2_0dvhi"]
+[ext_resource type="PackedScene" uid="uid://d1jb248gmina1" path="res://Scenes/block.tscn" id="3_kapk7"]
+[ext_resource type="PackedScene" uid="uid://v7unggthm5ap" path="res://Scenes/ui/pausemenu.tscn" id="4_olurq"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_twr0n")]
+
+[node name="Level" type="Node2D" parent="."]
+script = ExtResource("2_0dvhi")
+
+[node name="Block" parent="Level" instance=ExtResource("3_kapk7")]
+position = Vector2(0, 100)
+
+[node name="Block2" parent="Level" instance=ExtResource("3_kapk7")]
+position = Vector2(32, 100)
+
+[node name="Block3" parent="Level" instance=ExtResource("3_kapk7")]
+position = Vector2(64, 100)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_olurq")]
+visible = false
