@@ -17,7 +17,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0exus"]
 height = 50.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_uaslb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
