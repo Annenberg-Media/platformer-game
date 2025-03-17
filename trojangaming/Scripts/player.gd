@@ -7,6 +7,9 @@ const WALL_JUMP_PUSHBACK = 2000.0
 const GRAVITY = 15
 const GRAVITY_WALL_SLIDE = 40
 
+var wallJump = false
+var lives = 3
+
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
@@ -24,7 +27,7 @@ func jump():
 	if Input.is_action_just_pressed("ui_accept"):
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
-		if is_on_wall():
+		if is_on_wall() && wallJump:
 			velocity.y = JUMP_VELOCITY
 			# TODO fix this, resets the x vel on next frame so glitches weirdly
 			velocity.x = WALL_JUMP_PUSHBACK * get_wall_normal().x

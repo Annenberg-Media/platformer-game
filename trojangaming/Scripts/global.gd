@@ -1,5 +1,7 @@
 extends Node
 
+# var wallJump = false
+
 func spawnFootball(pos):
 	var scene = load("res://Scenes/football.tscn")
 	var fb = scene.instantiate()
