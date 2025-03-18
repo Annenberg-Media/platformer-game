@@ -16,6 +16,14 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	if wallJump:
+		if randi_range(1, 2) == 1:
+			var scene = load("res://Scenes/particle.tscn")
+			var px = scene.instantiate()
+			# px.global_position = self.global_position + Vector2(randi_range(-15, 15), 15)
+			add_child(px)
+	
 	jump()
 	wall_slide(delta, direction)
 	move_and_slide()
