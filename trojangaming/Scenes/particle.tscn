@@ -72,4 +72,4 @@ shape = SubResource("RectangleShape2D_vfv4n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_68wlu")
-animation = &"big"
+animation = &"red"
