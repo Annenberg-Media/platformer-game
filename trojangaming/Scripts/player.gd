@@ -27,8 +27,6 @@ func _physics_process(delta: float) -> void:
 	jump()
 	wall_slide(delta, direction)
 	move_and_slide()
-	
-	
 
 func jump():
 	velocity.y += GRAVITY
@@ -44,3 +42,6 @@ func wall_slide(delta, dir):
 	if is_on_wall() and !is_on_floor() and dir:
 		velocity.y += (GRAVITY_WALL_SLIDE * delta)
 		velocity.y = min(velocity.y, GRAVITY_WALL_SLIDE)
+
+func hurt() -> void:
+	$screenflash.play("hurt")
