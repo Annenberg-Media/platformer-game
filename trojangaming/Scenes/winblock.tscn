@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://vkoq82d7ddjo"]
+
+[ext_resource type="Script" path="res://Scripts/winblock.gd" id="1_86du1"]
+[ext_resource type="Texture2D" uid="uid://bjcyh3pb03olj" path="res://Assets/sprites/placeholderWin.png" id="2_e7wdg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4c8w"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3h6s"]
+size = Vector2(30, 30)
+
+[node name="winblock" type="Area2D"]
+script = ExtResource("1_86du1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_e7wdg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n4c8w")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_h3h6s")
