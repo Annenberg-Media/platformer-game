@@ -8,6 +8,8 @@ const GRAVITY = 15
 const GRAVITY_WALL_SLIDE = 40
 
 var wallJump = false
+var scooter = false # TODO
+
 var lives = 3
 
 func _physics_process(delta: float) -> void:

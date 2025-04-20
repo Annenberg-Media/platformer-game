@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://co1af0jtvg3fj"]
+
+[ext_resource type="Script" path="res://Scripts/scooter.gd" id="1_ygacf"]
+[ext_resource type="Texture2D" uid="uid://d2j31wbj81ens" path="res://Assets/sprites/scooter.png" id="2_rfj5t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4n5pq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rfj5t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ej2fy"]
+size = Vector2(75, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0mte"]
+size = Vector2(87, 43)
+
+[node name="Scooter" type="RigidBody2D"]
+script = ExtResource("1_ygacf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4n5pq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 39.5)
+shape = SubResource("RectangleShape2D_ej2fy")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.5, 26.5)
+shape = SubResource("RectangleShape2D_r0mte")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
