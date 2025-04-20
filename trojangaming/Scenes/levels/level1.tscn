@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://2bssl6w47yjs"]
+[gd_scene load_steps=9 format=4 uid="uid://2bssl6w47yjs"]
 
+[ext_resource type="Script" path="res://Scripts/clearsky.gd" id="1_kgyxr"]
 [ext_resource type="PackedScene" uid="uid://d2b7fy3a341jn" path="res://Scenes/player.tscn" id="1_twr0n"]
+[ext_resource type="Texture2D" uid="uid://db0inl31q5r03" path="res://Assets/sky.png" id="1_wiqr6"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="2_0dvhi"]
 [ext_resource type="TileSet" uid="uid://ivsdv48tgbid" path="res://Assets/tsets/placeholder.tres" id="3_nnatc"]
 [ext_resource type="PackedScene" uid="uid://bbxvghem2m85y" path="res://Scenes/questionblock.tscn" id="4_aaii8"]
@@ -8,6 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://djblfpikmf502" path="res://Scenes/enemy0.tscn" id="5_p8y52"]
 
 [node name="Level1" type="Node2D"]
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -128
+script = ExtResource("1_kgyxr")
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_wiqr6")
 
 [node name="Player" parent="." instance=ExtResource("1_twr0n")]
 

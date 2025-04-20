@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1t1aqw8hhpbp"]
+
+[ext_resource type="Texture2D" uid="uid://bi6031q6uuxry" path="res://Assets/cloud1.png" id="1_2dm1q"]
+[ext_resource type="Texture2D" uid="uid://cvqtwifcladrw" path="res://Assets/cloud2.png" id="2_cd666"]
+[ext_resource type="Texture2D" uid="uid://lbvg54q82as1" path="res://Assets/cloud3.png" id="3_22joh"]
+[ext_resource type="Texture2D" uid="uid://bglja5xri875u" path="res://Assets/cloud4.png" id="4_v4uvt"]
+[ext_resource type="Script" path="res://Scripts/cloud.gd" id="5_7vipj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2rar"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2dm1q")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cd666")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_22joh")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_v4uvt")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}]
+
+[node name="Cloud" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_m2rar")
+animation = &"4"
+script = ExtResource("5_7vipj")
