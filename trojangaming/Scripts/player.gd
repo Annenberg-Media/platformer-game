@@ -7,17 +7,32 @@ const WALL_JUMP_PUSHBACK = 2000.0
 const GRAVITY = 15
 const GRAVITY_WALL_SLIDE = 40
 
+@onready var scooterSprite = $"Scooter"
+
+var speedMult = 1.0
+
 var wallJump = false
 var scooter = false # TODO
 
 var lives = 3
 
+func _ready() -> void:
+	scooterSprite.visible = false
+
 func _physics_process(delta: float) -> void:
+	
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * SPEED * speedMult
+		if scooter:
+			if direction > 0:
+				scooterSprite.flip_h = false
+				scooterSprite.offset.x = 10
+			else:
+				scooterSprite.flip_h = true
+				scooterSprite.offset.x = -10
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED * speedMult)
 	
 	if wallJump:
 		if randi_range(1, 2) == 1:
@@ -44,6 +59,12 @@ func wall_slide(delta, dir):
 	if is_on_wall() and !is_on_floor() and dir:
 		velocity.y += (GRAVITY_WALL_SLIDE * delta)
 		velocity.y = min(velocity.y, GRAVITY_WALL_SLIDE)
+
+func getScooter():
+	if !scooter:
+		scooterSprite.visible = true
+		scooter = true
+		speedMult += 0.75
 
 func hurt() -> void:
 	$screenflash.play("hurt")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://b4a1anqdsubun"]
+[gd_scene load_steps=8 format=4 uid="uid://b4a1anqdsubun"]
 
 [ext_resource type="PackedScene" uid="uid://d2b7fy3a341jn" path="res://Scenes/player.tscn" id="1_3pvxx"]
 [ext_resource type="PackedScene" uid="uid://v7unggthm5ap" path="res://Scenes/ui/pausemenu.tscn" id="1_mjgjw"]
@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://ivsdv48tgbid" path="res://Assets/tsets/placeholder.tres" id="2_0iqjm"]
 [ext_resource type="Texture2D" uid="uid://buakjpcanvklj" path="res://Assets/sky2.png" id="2_loxpj"]
 [ext_resource type="Texture2D" uid="uid://uffsiyq57mno" path="res://Assets/rain.png" id="3_qekg0"]
+[ext_resource type="PackedScene" uid="uid://co1af0jtvg3fj" path="res://Scenes/scooter.tscn" id="6_8hai5"]
 
 [node name="Level2" type="Node2D"]
 
@@ -35,6 +36,9 @@ position = Vector2(-84, 13)
 [node name="TileMap" type="TileMapLayer" parent="Level"]
 tile_map_data = PackedByteArray("AAACAAEAAAACAAEAAAADAAEAAAAAAAEAAAAEAAEAAAABAAEAAAAFAAEAAAACAAEAAAAGAAEAAAAAAAEAAAAHAAEAAAABAAEAAAAIAAEAAAACAAEAAAAJAAEAAAAAAAEAAAAKAAEAAAABAAEAAAALAAEAAAACAAEAAAAOAAEAAAAAAAEAAAAPAAEAAAABAAEAAAAQAAEAAAACAAEAAAD2/wQAAAAAAAEAAAD3/wQAAAABAAEAAAD4/wQAAAACAAEAAAD5/wQAAAABAAgAAAD6/wQAAAABAAEAAAD7/wQAAAACAAEAAAD8/wQAAAAAAAEAAAD9/wQAAAABAAEAAAD+/wQAAAACAAEAAAABAAYAAAAAAAEAAAACAAYAAAABAAEAAAADAAYAAAACAAEAAAAHAAYAAAAAAAEAAAAIAAYAAAABAAEAAAAJAAYAAAACAAEAAAAMAAUAAAAAAAEAAAANAAUAAAABAAEAAAAOAAUAAAACAAEAAAARAAQAAAAAAAEAAAASAAQAAAABAAEAAAATAAQAAAACAAEAAAAUAAMAAAAAAAEAAAAVAAIAAAAAAAEAAAASAAEAAAAAAAEAAAAFAP7/AAAAAAAAAAD5/wMAAAABAAgAAAD5/wIAAAABAAgAAAD5/wEAAAABAAgAAAD5/wAAAAABAAgAAAD5////AAABAAgAAAA=")
 tile_set = ExtResource("2_0iqjm")
+
+[node name="Scooter" parent="Level" instance=ExtResource("6_8hai5")]
+position = Vector2(301, -24)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

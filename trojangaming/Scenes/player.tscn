@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2b7fy3a341jn"]
+[gd_scene load_steps=7 format=3 uid="uid://d2b7fy3a341jn"]
 
 [ext_resource type="Texture2D" uid="uid://ddldje30kf0on" path="res://Assets/sprites/placeholder.png" id="1_6cqtc"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_uaslb"]
 [ext_resource type="PackedScene" uid="uid://cqc7fjkxu3633" path="res://Scenes/screenflash.tscn" id="3_rjpjy"]
+[ext_resource type="Texture2D" uid="uid://d2j31wbj81ens" path="res://Assets/sprites/scooter.png" id="4_g5lwh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hif7e"]
 animations = [{
@@ -39,3 +40,8 @@ drag_bottom_margin = 0.05
 
 [node name="screenflash" parent="." instance=ExtResource("3_rjpjy")]
 script = null
+
+[node name="Scooter" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_g5lwh")
+offset = Vector2(10, 0)
