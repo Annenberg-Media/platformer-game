@@ -44,6 +44,8 @@ func _physics_process(delta: float) -> void:
 	jump()
 	wall_slide(delta, direction)
 	move_and_slide()
+	if(position.y > 400): 
+		get_tree().call_deferred("reload_current_scene");
 
 func jump():
 	velocity.y += GRAVITY

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://2bssl6w47yjs"]
+[gd_scene load_steps=11 format=4 uid="uid://2bssl6w47yjs"]
 
 [ext_resource type="Script" path="res://Scripts/clearsky.gd" id="1_kgyxr"]
 [ext_resource type="PackedScene" uid="uid://d2b7fy3a341jn" path="res://Scenes/player.tscn" id="1_twr0n"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bbxvghem2m85y" path="res://Scenes/questionblock.tscn" id="4_aaii8"]
 [ext_resource type="PackedScene" uid="uid://v7unggthm5ap" path="res://Scenes/ui/pausemenu.tscn" id="4_olurq"]
 [ext_resource type="PackedScene" uid="uid://djblfpikmf502" path="res://Scenes/enemy0.tscn" id="5_p8y52"]
+[ext_resource type="PackedScene" uid="uid://cl8m0h0y4knng" path="res://Scenes/goalblock.tscn" id="8_hsm2j"]
+[ext_resource type="PackedScene" uid="uid://dv8ot6amhamao" path="res://Scenes/ui/goalmenu.tscn" id="9_18dq6"]
 
 [node name="Level1" type="Node2D"]
 
@@ -26,7 +28,7 @@ texture = ExtResource("1_wiqr6")
 script = ExtResource("2_0dvhi")
 
 [node name="TileMap" type="TileMapLayer" parent="Level"]
-tile_map_data = PackedByteArray("AAD9/wEAAAAAAAEAAAD+/wEAAAABAAEAAAD//wEAAAACAAEAAAAAAAEAAAAAAAEAAAABAAEAAAABAAEAAAACAAEAAAACAAEAAAADAAEAAAAAAAEAAAAEAAEAAAABAAEAAAAFAAEAAAACAAEAAAAGAAEAAAAAAAEAAAAHAAEAAAABAAEAAAAIAAEAAAACAAEAAAAJAAEAAAAAAAEAAAAKAAEAAAABAAEAAAALAAEAAAACAAEAAAAOAAEAAAAAAAEAAAAPAAEAAAABAAEAAAAQAAEAAAACAAEAAAAPAP//AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD9/wEAAAAAAAEAAAD+/wEAAAABAAEAAAD//wEAAAACAAEAAAAAAAEAAAAAAAEAAAABAAEAAAABAAEAAAACAAEAAAACAAEAAAADAAEAAAAAAAEAAAAEAAEAAAABAAEAAAAFAAEAAAACAAEAAAAGAAEAAAAAAAEAAAAHAAEAAAABAAEAAAAIAAEAAAACAAEAAAAJAAEAAAAAAAEAAAAKAAEAAAABAAEAAAALAAEAAAACAAEAAAAOAAEAAAAAAAEAAAAPAAEAAAABAAEAAAAQAAEAAAACAAEAAAAPAP//AAAAAAAAAAARAAEAAAAEAAkAAAASAAEAAAAEAAkAAAATAAEAAAAEAAkAAAAUAAEAAAAEAAkAAAAVAAEAAAAEAAkAAAAWAAEAAAAEAAkAAAAVAP//AAADAAAAAAA=")
 tile_set = ExtResource("3_nnatc")
 
 [node name="QBlock" parent="Level" instance=ExtResource("4_aaii8")]
@@ -35,7 +37,13 @@ position = Vector2(96, -64)
 [node name="Enemy0" parent="Level" instance=ExtResource("5_p8y52")]
 position = Vector2(-96, 0)
 
+[node name="GoalBlock" parent="Level" instance=ExtResource("8_hsm2j")]
+position = Vector2(688, -22)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GoalMenu" parent="CanvasLayer" instance=ExtResource("9_18dq6")]
+visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_olurq")]
 visible = false

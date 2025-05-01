@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl8m0h0y4knng"]
+
+[ext_resource type="Script" path="res://Scripts/goalblock.gd" id="1_glykb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3me7"]
+size = Vector2(32, 31)
+
+[node name="GoalBlock" type="Area2D"]
+script = ExtResource("1_glykb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+scale = Vector2(1.5, 3)
+shape = SubResource("RectangleShape2D_g3me7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -0.5)
+scale = Vector2(1.5, 3)
+shape = SubResource("RectangleShape2D_g3me7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
