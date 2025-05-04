@@ -16,13 +16,19 @@ var scooter = false # TODO
 
 var lives = 3
 
+var kb = Vector2(0, 0)
+
 func _ready() -> void:
 	scooterSprite.visible = false
 
 func _physics_process(delta: float) -> void:
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
+	if kb.length() > 20.0:
+		velocity.x = kb.x
+		velocity.y += kb.y
+		kb -= Vector2(delta * kb.x * 3, delta * kb.y * 3)
+	elif direction:
 		velocity.x = direction * SPEED * speedMult
 		if scooter:
 			if direction > 0:
@@ -69,4 +75,9 @@ func getScooter():
 		speedMult += 0.75
 
 func hurt() -> void:
-	$screenflash.play("hurt")
+	$Ow.emitting = true
+	# $"screenflash/TextureRect".position = position
+	# $screenflash.play("hurt")
+
+func knockback(v):
+	kb = v

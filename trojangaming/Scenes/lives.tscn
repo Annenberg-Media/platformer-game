@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcdwpmfjbo2nw"]
+
+[ext_resource type="Script" path="res://Scripts/health.gd" id="1_3luvk"]
+[ext_resource type="Texture2D" uid="uid://crl6v8jdrofxx" path="res://Assets/bar1.png" id="1_y75cs"]
+[ext_resource type="Texture2D" uid="uid://c1wvjxjeq7162" path="res://Assets/bar2.png" id="2_h5qdf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_se5as"]
+
+[node name="ProgressBar" type="TextureProgressBar"]
+offset_right = 75.0
+offset_bottom = 183.0
+max_value = 3.0
+fill_mode = 3
+texture_under = ExtResource("1_y75cs")
+texture_progress = ExtResource("2_h5qdf")
+script = ExtResource("1_3luvk")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Lives"
+label_settings = SubResource("LabelSettings_se5as")
+horizontal_alignment = 1
+vertical_alignment = 1
